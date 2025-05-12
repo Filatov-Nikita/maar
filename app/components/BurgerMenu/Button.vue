@@ -23,7 +23,7 @@
     @include text-body-s-regular-01;
 
     &:hover {
-      opacity: 0.8;
+      color: var(--color-primary-01);
     }
   }
 

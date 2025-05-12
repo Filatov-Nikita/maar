@@ -28,6 +28,7 @@ export default defineNuxtConfig({
           additionalData: `
             @use "~/assets/scss/mixins/text.scss" as *;
             @use "~/assets/scss/mixins/screen.scss" as *;
+            @use "~/assets/scss/mixins/shadow.scss" as *;
           `,
         }
       }

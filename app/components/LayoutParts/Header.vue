@@ -5,7 +5,7 @@
         <NuxtLink class="logo-wrap" :to="{ name: 'index' }">
           <img class="w-full" width="95" height="32" src="~/assets/images/logo.svg" alt="Логотип MAAR" />
         </NuxtLink>
-        <BurgerMenuButton />
+        <BurgerMenu />
       </div>
     </div>
   </header>
