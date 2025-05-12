@@ -2,14 +2,30 @@
   <nav>
     <div class="row-primary">
       <FooterSlideItem label="Домовладения">
-        <div>
-          1
-        </div>
+        <ul class="list">
+          <li
+            class="list-item"
+            v-for="house in JSON.parse(inProcessHouses as any)"
+            :key="house.id"
+          >
+            <NuxtLink to="#">
+              {{ house.name }}
+            </NuxtLink>
+          </li>
+        </ul>
       </FooterSlideItem>
       <FooterSlideItem label="Реализованные объекты">
-        <div>
-          1
-        </div>
+        <ul class="list">
+          <li
+            class="list-item"
+            v-for="house in JSON.parse(readyHouses as any)"
+            :key="house.id"
+          >
+            <NuxtLink to="#">
+              {{ house.name }}
+            </NuxtLink>
+          </li>
+        </ul>
       </FooterSlideItem>
       <FooterSlideItem label="Архитектурное бюро">
         <div>
@@ -46,7 +62,12 @@
 </template>
 
 <script setup lang="ts">
+  import type { HomeHouseOne } from '~/repositories/houses';
 
+  defineProps<{
+    readyHouses: HomeHouseOne[],
+    inProcessHouses: HomeHouseOne[],
+  }>();
 </script>
 
 <style scoped lang="scss">
@@ -65,5 +86,16 @@
     & > * + * {
       margin-top: 24px;
     }
+  }
+
+  .list {
+    & > * + * {
+      margin-top: 16px;
+    }
+  }
+
+  .list-item {
+    color: var(--color-secondary-04);
+    @include text-body-s-regular-01;
   }
 </style>

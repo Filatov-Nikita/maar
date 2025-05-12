@@ -1,7 +1,10 @@
 <template>
   <footer class="footer">
     <div class="wrapper">
-      <FooterNavMobile />
+      <FooterNavMobile
+        :readyHouses="readyHouses"
+        :inProcessHouses="inProcessHouses"
+      />
       <div class="info">
         <div class="logo-row">
           <div class="logo-wrap">
@@ -67,6 +70,16 @@
   const config = useRuntimeConfig().public;
 
   const year = getCurrentYear();
+
+  const api = useNuxtApp().$api;
+
+  const [ res1, res2 ] = await Promise.all([
+    useAsyncData(() => api.houses.home({ type: '1' })),
+    useAsyncData(() => api.houses.home({ type: '2' })),
+  ]);
+
+  const readyHouses = useDataOrFail(res1);
+  const inProcessHouses = useDataOrFail(res2);
 </script>
 
 <style scoped lang="scss">
