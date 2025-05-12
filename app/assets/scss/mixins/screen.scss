@@ -9,13 +9,13 @@ $xl: 1440px;
 }
 
 @mixin md() {
-  @include screen($xl) {
+  @include screen($md) {
     @content;
   }
 }
 
 @mixin lg() {
-  @include screen($xl) {
+  @include screen($lg) {
     @content;
   }
 }
