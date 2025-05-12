@@ -1,6 +1,9 @@
 <template>
   <button class="btn">
-    Меню
+    <span>Меню</span>
+    <span class="icon">
+      <BaseIcon name="list-regular" fit />
+    </span>
   </button>
 </template>
 
@@ -10,6 +13,9 @@
 
 <style scoped lang="scss">
   .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px;
     border-radius: 8px;
     background: var(--color-white);
@@ -19,5 +25,10 @@
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
   }
 </style>

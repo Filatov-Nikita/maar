@@ -1,8 +1,18 @@
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import path from 'path';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: '',
+      contacts: {
+        phone: '+7 499 505-50-50',
+        links: {
+          wa: '#',
+          tg: '#',
+        },
+      }
     }
   },
   future: {
@@ -21,6 +31,14 @@ export default defineNuxtConfig({
           `,
         }
       }
-    }
+    },
+    plugins: [
+      createSvgIconsPlugin({
+        iconDirs: [ path.resolve(process.cwd(), 'app/assets/icons') ],
+        symbolId: 'icon-[dir]-[name]',
+        inject: 'body-last',
+        customDomId: '__svg__icons__dom__',
+      }),
+    ],
   }
-})
+});
