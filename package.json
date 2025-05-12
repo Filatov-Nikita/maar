@@ -13,6 +13,7 @@
     "@floating-ui/vue": "^1.1.6",
     "animate.css": "^4.1.1",
     "nuxt": "^3.16.2",
+    "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-slide-up-down": "^3.0.0"
