@@ -6,6 +6,14 @@
   line-height: 1.2;
 }
 
+@mixin text-body-xs-regular-01 {
+  font-family: var(--font-object);
+  letter-spacing: var(--l-spacing-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 @mixin text-body-s-regular-01 {
   font-family: var(--font-object);
   letter-spacing: var(--l-spacing-base);

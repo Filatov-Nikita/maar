@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         links: {
           wa: '#',
           tg: '#',
+          docs: '#',
         },
       }
     }
