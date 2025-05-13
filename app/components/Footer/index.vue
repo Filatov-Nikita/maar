@@ -34,32 +34,32 @@
               target="_blank"
             />
           </div>
-          <div class="contacts-rows">
-            <div>
-              <div class="contacts-label">Связаться с нами</div>
-              <div class="contacts-text">
-                <a class="contacts-tel" :href="`tel:${config.contacts.phone}`">{{ config.contacts.phone }}</a>
-              </div>
+        </div>
+        <div class="contacts-rows">
+          <div>
+            <div class="contacts-label">Связаться с нами</div>
+            <div class="contacts-text">
+              <a class="contacts-tel" :href="`tel:${config.contacts.phone}`">{{ config.contacts.phone }}</a>
             </div>
-            <div>
-              <div class="contacts-label">Офис продаж</div>
-              <div class="contacts-text">
-                <div class="contacts-office">
-                  Московская обл., ГО&nbsp;Истра, д.&nbsp;Покровское, ул.&nbsp;Центральная 27/2, 2&nbsp;эт., офис&nbsp;10 (ТЦ&nbsp;«Покровский»)
-                </div>
-                <div class="contacts-time">
-                  Пн — Сб с 9:00 до 18:00<br>Вс — выходой
-                </div>
+          </div>
+          <div>
+            <div class="contacts-label">Офис продаж</div>
+            <div class="contacts-text">
+              <div class="contacts-office">
+                Московская обл., ГО&nbsp;Истра, д.&nbsp;Покровское, ул.&nbsp;Центральная 27/2, 2&nbsp;эт., офис&nbsp;10 (ТЦ&nbsp;«Покровский»)
+              </div>
+              <div class="contacts-time">
+                Пн — Сб с 9:00 до 18:00<br>Вс — выходой
               </div>
             </div>
           </div>
-          <div class="bottom-row">
-            <div class="contacts-docs">
-              <a target="_blank" :href="config.contacts.links.docs">Документация</a>
-            </div>
-            <div class="producer-text">©&nbsp;MAAR&nbsp;DEVELOPMENT&nbsp;{{ year }}</div>
-            <div class="studio-text">Сделано в&nbsp;<span>Yes&nbsp;Idea</span></div>
+        </div>
+        <div class="bottom-row">
+          <div class="contacts-docs">
+            <a target="_blank" :href="config.contacts.links.docs">Документация</a>
           </div>
+          <div class="producer-text">©&nbsp;MAAR&nbsp;DEVELOPMENT&nbsp;{{ year }}</div>
+          <div class="studio-text">Сделано в&nbsp;<span>Yes&nbsp;Idea</span></div>
         </div>
       </div>
     </div>
@@ -118,6 +118,8 @@
   }
 
   .contacts-rows {
+    margin-bottom: 32px;
+
     & > * + * {
       margin-top: 24px;
     }
