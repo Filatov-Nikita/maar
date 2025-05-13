@@ -58,6 +58,7 @@
   }
 
   .body {
+    padding-top: 3px;
     flex-grow: 1;
   }
 

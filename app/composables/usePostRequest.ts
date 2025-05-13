@@ -18,7 +18,7 @@ export default function<K, T extends (body: K) => Promise<any>>(
     } catch(e) {
       alerts.create({
         type: 'error',
-        text: errorText ?? 'Не удалось выполнить запрос!',
+        title: errorText ?? 'Не удалось выполнить запрос!',
       });
     } finally {
       loading.value = false;
