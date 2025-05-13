@@ -17,7 +17,7 @@
     placeholder: string,
     type?: 'text' | 'tel' | 'email' | 'number',
     name: string,
-    rules: RuleExpression<string>,
+    rules?: RuleExpression<string>,
   }>();
 
   const { value, errorMessage } = useField(props.name, props.rules, {

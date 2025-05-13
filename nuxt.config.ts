@@ -13,6 +13,9 @@ export default defineNuxtConfig({
           tg: '#',
           docs: '#',
         },
+      },
+      links: {
+        privicy: '#',
       }
     }
   },

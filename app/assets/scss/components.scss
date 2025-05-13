@@ -19,3 +19,16 @@
     max-width: 1440px;
   }
 }
+
+
+.link-primary {
+  color: var(--color-primary-01);
+
+  &:hover {
+    color: var(--color-primary-02);
+  }
+
+  &:active {
+    color: var(--color-primary-03);
+  }
+}
