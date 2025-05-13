@@ -73,13 +73,11 @@
 
   const api = useNuxtApp().$api;
 
-  const [ res1, res2 ] = await Promise.all([
-    useAsyncData(() => api.houses.home({ type: '1' })),
-    useAsyncData(() => api.houses.home({ type: '2' })),
-  ]);
+  const res = await useAsyncData(() => api.houses.home());
+  const data = useDataOrFail(res);
 
-  const readyHouses = useDataOrFail(res1);
-  const inProcessHouses = useDataOrFail(res2);
+  const readyHouses = computed(() => data.value.filter(house => house.type === 'Готовый'));
+  const inProcessHouses = computed(() => data.value.filter(house => house.type === 'Строящийся'));
 </script>
 
 <style scoped lang="scss">

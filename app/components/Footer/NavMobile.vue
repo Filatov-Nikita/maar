@@ -5,7 +5,7 @@
         <ul class="list">
           <li
             class="list-item"
-            v-for="house in JSON.parse(inProcessHouses as any)"
+            v-for="house in inProcessHouses"
             :key="house.id"
           >
             <NuxtLink to="#">
@@ -18,7 +18,7 @@
         <ul class="list">
           <li
             class="list-item"
-            v-for="house in JSON.parse(readyHouses as any)"
+            v-for="house in readyHouses"
             :key="house.id"
           >
             <NuxtLink to="#">
