@@ -1,5 +1,5 @@
 <template>
-  <VForm class="form" :validationSchema="schema" @submit="$emit('submit')">
+  <VForm ref="formRef" class="form" :validationSchema="schema" @submit="$emit('submit')">
     <div class="fields">
       <BaseVInput
         name="name"
@@ -53,6 +53,12 @@
   });
 
   const config = useRuntimeConfig().public;
+
+  const formRef = ref<InstanceType<typeof VForm> | null>(null);
+
+  defineExpose({
+    reset: () => formRef.value?.resetForm(),
+  });
 </script>
 
 <style scoped lang="scss">

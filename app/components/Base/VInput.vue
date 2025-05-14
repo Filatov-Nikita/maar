@@ -18,9 +18,15 @@
     type?: 'text' | 'tel' | 'email' | 'number',
     name: string,
     rules?: RuleExpression<string>,
+    modelValue: string,
+  }>();
+
+  defineEmits<{
+    (event: 'update:modelValue', value: string): void,
   }>();
 
   const { value, errorMessage } = useField(props.name, props.rules, {
     syncVModel: true,
+    validateOnValueUpdate: true,
   });
 </script>
