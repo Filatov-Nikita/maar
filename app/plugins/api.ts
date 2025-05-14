@@ -1,5 +1,6 @@
 import createHousesRepo from '@/repositories/houses';
 import createFeedbackRepo from '@/repositories/feedback';
+import createNewsRepo from '@/repositories/news';
 
 export default defineNuxtPlugin({
   name: 'api',
@@ -10,12 +11,14 @@ export default defineNuxtPlugin({
 
     const houses = createHousesRepo(appFetch);
     const feedback = createFeedbackRepo(appFetch);
+    const news = createNewsRepo(appFetch);
 
     return {
       provide: {
         api: {
           houses,
           feedback,
+          news,
         }
       }
     }
