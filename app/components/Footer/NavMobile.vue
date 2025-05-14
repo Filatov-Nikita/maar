@@ -51,7 +51,7 @@
       <NuxtLink class="link-primary" to="#">
         О компании
       </NuxtLink>
-      <NuxtLink class="link-primary" to="#">
+      <NuxtLink class="link-primary" :to="{ name: 'news' }">
         Новости
       </NuxtLink>
       <NuxtLink class="link-primary" to="#">

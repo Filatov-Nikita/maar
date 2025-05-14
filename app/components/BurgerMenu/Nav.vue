@@ -34,7 +34,7 @@
         <NuxtLink class="link-secondary" to="#">
           Private management service
         </NuxtLink>
-        <NuxtLink class="link-secondary" to="#">
+        <NuxtLink class="link-secondary" :to="{ name: 'news' }">
           Новости
         </NuxtLink>
         <NuxtLink class="link-secondary" to="#">

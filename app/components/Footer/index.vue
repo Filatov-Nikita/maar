@@ -7,9 +7,9 @@
       />
       <div class="info">
         <div class="logo-row">
-          <div class="logo-wrap">
+          <NuxtLink class="logo-wrap" :to="{ name: 'index' }">
             <img class="w-full" width="95" height="32" src="~/assets/images/logo.svg" alt="Логотип MAAR" />
-          </div>
+          </NuxtLink>
           <div class="social">
             <BaseButtonIcon
               tag="a"
