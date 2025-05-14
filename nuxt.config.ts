@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: '',
+      assetsBase: '',
       contacts: {
         phone: '+7 499 505-50-50',
         links: {
