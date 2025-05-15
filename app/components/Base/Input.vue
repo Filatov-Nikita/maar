@@ -27,6 +27,8 @@
 
 <style scoped lang="scss">
   .label {
+    display: block;
+    width: fit-content;
     color: var(--color-base-04);
     margin-bottom: 12px;
     @include text-body-s-regular-02;

@@ -11,6 +11,7 @@
       <div class="wrapper">
         <p class="h2 uppercase pb-24">Новости, инсайты и&nbsp;тренды</p>
         <NewsList v-if="data" :items="data" />
+        <Subscribe class="section-mt" />
       </div>
     </main>
   </div>

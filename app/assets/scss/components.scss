@@ -42,3 +42,19 @@
 .page-py {
   padding: 80px 0 0;
 }
+
+.section {
+  $offset: 80px;
+
+  &-mt {
+    margin-top: $offset;
+  }
+
+  &-my {
+    margin: $offset 0;
+  }
+
+  &-pb {
+    padding-bottom: $offset 0;
+  }
+}

@@ -23,11 +23,7 @@
     <BaseButton class="w-full" type="submit" :disabled="loading">
       Отправить
     </BaseButton>
-    <div class="text">
-      Нажимая кнопку, вы подтверждаете, что ознакомились с условиями обработки
-      <a class="link-primary" :href="config.links.privicy" target="_blank">персональных данных</a>
-      и соглашаетесь с их принятием
-    </div>
+    <FormTextPerc class="perc" />
   </VForm>
 </template>
 
@@ -52,8 +48,6 @@
     time: string().required().label('Время'),
   });
 
-  const config = useRuntimeConfig().public;
-
   const formRef = ref<InstanceType<typeof VForm> | null>(null);
 
   defineExpose({
@@ -74,9 +68,8 @@
     }
   }
 
-  .text {
+  .perc {
     margin-top: 12px;
     color: var(--color-secondary-04);
-    @include text-body-s-regular-02;
   }
 </style>
