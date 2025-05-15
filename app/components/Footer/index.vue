@@ -82,7 +82,7 @@
 
 <style scoped lang="scss">
   .footer {
-    padding: 32px 0;
+    padding: 80px 0 32px;
   }
 
   .info {
