@@ -1,6 +1,6 @@
 import type { RouteLocationRaw } from 'vue-router';
 
-interface Item {
+export interface Item {
   name: string,
   to?: RouteLocationRaw
 }

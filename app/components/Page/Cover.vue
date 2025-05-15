@@ -9,8 +9,11 @@
 </template>
 
 <script setup lang="ts">
-  defineProps<{
+  import type { Item } from '@/stores/breadcrumbs';
+
+  const props = defineProps<{
     title: string,
+    breadcrumbs: Item[],
   }>();
 
   const h = ref('0px');
@@ -20,6 +23,10 @@
       h.value = getElementHeight('.header') + 'px';
     });
   });
+
+  const breadcrumbs = useBreadcrumbsStore();
+
+  breadcrumbs.set(props.breadcrumbs);
 </script>
 
 <style scoped lang="scss">
