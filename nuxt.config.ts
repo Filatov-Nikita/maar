@@ -37,6 +37,7 @@ export default defineNuxtConfig({
             @use "~/assets/scss/mixins/text.scss" as *;
             @use "~/assets/scss/mixins/screen.scss" as *;
             @use "~/assets/scss/mixins/shadow.scss" as *;
+            @use "~/assets/scss/spacing.scss" as *;
           `,
         }
       }

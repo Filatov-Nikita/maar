@@ -1,0 +1,9 @@
+@use './mixins/text.scss';
+
+.h1, h1 {
+  @include text.text-h4-regular-02;
+}
+
+.h2, h2 {
+  @include text.text-body-xl-regular-01;
+}

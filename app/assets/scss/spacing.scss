@@ -1,0 +1,30 @@
+@use './mixins/screen.scss';
+
+$points: (
+  'md': screen.$md,
+  'lg': screen.$lg,
+  'xl': screen.$xl,
+);
+
+$steps: 12, 16, 20, 24, 32, 48, 64;
+
+@mixin create-rule($prefix, $property) {
+  @each $step in $steps {
+    .#{$prefix}-#{$step} {
+      #{$property}: #{$step}px;
+    }
+
+    @each $point-key, $point-value in $points {
+      @include screen.screen($point-value) {
+        .#{$point-key}-#{$prefix}-#{$step} {
+          #{$property}: #{$step}px;
+        }
+      }
+    }
+  }
+}
+
+@include create-rule('mt', 'margin-top');
+@include create-rule('mb', 'margin-bottom');
+@include create-rule('pt', 'padding-top');
+@include create-rule('pb', 'padding-bottom');

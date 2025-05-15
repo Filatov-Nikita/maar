@@ -2,7 +2,9 @@
 @use './reset.scss';
 @use './base.scss';
 @use './utilities.scss';
+@use './typography.scss';
 @use './components.scss';
+@use './spacing.scss';
 
 :root {
   --color-primary-01: #9E7262;
