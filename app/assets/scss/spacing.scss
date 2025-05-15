@@ -8,23 +8,44 @@ $points: (
 
 $steps: 12, 16, 20, 24, 32, 48, 64;
 
+@mixin xb($prop, $value) {
+  #{$prop}-bottom: $value;
+}
+
+@mixin xt($prop, $value) {
+  #{$prop}-top: $value;
+}
+
+@mixin xy($prop, $value) {
+  #{$prop}-top: $value;
+  #{$prop}-bottom: $value;
+}
+
+@mixin variants($prefix, $property, $step) {
+  .#{$prefix}t-#{$step} {
+    @include xt($property, #{$step}px);
+  }
+
+  .#{$prefix}b-#{$step} {
+    @include xb($property, #{$step}px);
+  }
+
+  .#{$prefix}y-#{$step} {
+    @include xy($property, #{$step}px);
+  }
+}
+
 @mixin create-rule($prefix, $property) {
   @each $step in $steps {
-    .#{$prefix}-#{$step} {
-      #{$property}: #{$step}px;
-    }
+    @include variants($prefix, $property, $step);
 
     @each $point-key, $point-value in $points {
       @include screen.screen($point-value) {
-        .#{$point-key}-#{$prefix}-#{$step} {
-          #{$property}: #{$step}px;
-        }
+        @include variants(#{$point-key}\:#{$prefix}, $property, $step);
       }
     }
   }
 }
 
-@include create-rule('mt', 'margin-top');
-@include create-rule('mb', 'margin-bottom');
-@include create-rule('pt', 'padding-top');
-@include create-rule('pb', 'padding-bottom');
+@include create-rule('m', 'margin');
+@include create-rule('p', 'padding');
