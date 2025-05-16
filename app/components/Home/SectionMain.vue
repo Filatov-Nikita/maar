@@ -1,7 +1,6 @@
 <template>
   <div class="main">
     <div class="wrap">
-      <LayoutPartsHeader />
       <div class="body">
         <div class="wrapper">
           <h1 class="h1">MAAR DEVELOPMENT</h1>

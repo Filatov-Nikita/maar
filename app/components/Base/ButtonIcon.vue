@@ -12,7 +12,7 @@
     padding: string,
     width: string,
     height: string,
-    color: 'white' | 'dark-01' | 'outline' | 'dark-02' | 'primary',
+    color: 'white' | 'dark-01' | 'outline' | 'dark-02' | 'primary' | 'secondary',
   }>();
 </script>
 
@@ -33,8 +33,8 @@
     }
 
     &--dark-01 {
-      background: var(--color-white);
-      color: var(--color-base-02);
+      background: var(--color-base-01);
+      color: var(--color-white);
     }
 
     &--outline {
@@ -50,6 +50,15 @@
     &--primary {
       background: var(--color-primary-01);
       color: var(--color-white);
+    }
+
+    &--secondary {
+      background: var(--color-secondary-01);
+      color: var(--color-white);
+
+      &:hover {
+        background: var(--color-secondary-02);
+      }
     }
   }
 </style>

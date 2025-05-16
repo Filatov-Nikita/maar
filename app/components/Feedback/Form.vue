@@ -1,5 +1,5 @@
 <template>
-  <VForm ref="formRef" class="form" :validationSchema="schema" @submit="$emit('submit')">
+  <VForm ref="formRef" class="form" :validationSchema="schema" @submit="send">
     <div class="fields">
       <BaseVInput
         name="name"
@@ -33,33 +33,43 @@
   import { isPhoneTest } from '@/validation/rules';
   import type { FeedBackBody } from '@/repositories/feedback';
 
-  defineProps<{
-    form: FeedBackBody,
-    loading: boolean,
-  }>();
-
-  defineEmits<{
-    (event: 'submit'): void,
-  }>();
-
   const schema = object({
     name: string().required().label('Имя'),
     phone: string().required().test(isPhoneTest).label('Телефон'),
     time: string().required().label('Время'),
   });
 
+  const api = useNuxtApp().$api;
+
+  const form: FeedBackBody = reactive({
+    name: '',
+    phone: '',
+    time: '',
+  });
+
+  const alerts = useAlertsStore();
+
+  const { send, loading } = usePostRequest(
+    api.feedback.create,
+    () => form,
+    () => {
+      reset();
+      alerts.create({ type: 'success', title: 'Данные успешно отправлены!' });
+    },
+    'Не удалось отправить данные!',
+  );
+
   const formRef = ref<InstanceType<typeof VForm> | null>(null);
 
-  defineExpose({
-    reset: () => formRef.value?.resetForm(),
-  });
+  function reset() {
+    form.name = '';
+    form.phone = '';
+    form.time = '';
+    formRef.value?.resetForm();
+  }
 </script>
 
 <style scoped lang="scss">
-  .form {
-    padding: 16px;
-  }
-
   .fields {
     margin-bottom: 24px;
 

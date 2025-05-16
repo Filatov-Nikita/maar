@@ -1,7 +1,10 @@
 <template>
   <NuxtLoadingIndicator />
   <NuxtRouteAnnouncer />
-  <Alerts />
+  <ClientOnly>
+    <Alerts />
+    <FeedbackModal />
+  </ClientOnly>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
