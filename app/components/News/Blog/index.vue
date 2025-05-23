@@ -28,6 +28,7 @@
 <style scoped lang="scss">
   .head {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     column-gap: 24px;
     padding-bottom: 24px;

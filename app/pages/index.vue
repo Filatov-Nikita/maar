@@ -1,13 +1,19 @@
 <template>
   <HomeSectionMain />
   <div class="wrapper section-mt">
-    <HousesLeaveRequest
-      title="Хочу это дом"
-      text="Оставьте заявку и наш специалист свяжется с вами в ближайшее время"
-    />
+    <HousesPicker />
+    <NewsBlog class="section-mt" />
     <Feedback
       class="section-mt"
     />
+    <PageNext class="section-mt" :to="{ name: 'news' }" name="Новости" />
+    <PageSeoText class="section-mt" title="MAAR DEVELOPMENT">
+      <p>
+        Наша компания являемся ведущими экспертами в сфере недвижимости и предлагаем широкий спектр услуг, связанных с покупкой, продажей и арендой недвижимости. Независимо от того, ищете ли вы идеальный дом, коммерческое помещение или инвестиционную возможность, наша команда профессионалов готова помочь вам реализовать ваши цели.
+      </p>
+      <br>
+      <p>test</p>
+    </PageSeoText>
   </div>
 </template>
 
