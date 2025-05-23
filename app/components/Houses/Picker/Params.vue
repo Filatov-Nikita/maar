@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="list-types">
-      <BaseTab class="tab-btn list-types-btn" name="map" text="На карте" icon="map-trifold-regular" :active="viewType === 'map'" @click="viewType = 'map'" />
       <BaseTab class="tab-btn list-types-btn" name="list" text="Списком" icon="grid-four-fill" :active="viewType === 'list'" @click="viewType = 'list'" />
+      <BaseTab class="tab-btn list-types-btn" name="map" text="На карте" icon="map-trifold-regular" :active="viewType === 'map'" @click="viewType = 'map'" />
     </div>
   </div>
 </template>

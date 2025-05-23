@@ -22,7 +22,12 @@ export default defineNuxtConfig({
   },
   modules: [
     '@pinia/nuxt',
+    'vue-yandex-maps/nuxt',
   ],
+  yandexMaps: {
+    apikey: process.env.NUXT_PUBLIC_YANDEX_MAP_KEY,
+    lang: 'ru_RU',
+  },
   future: {
     compatibilityVersion: 4,
   },

@@ -6,7 +6,7 @@
         tag="div"
         radius="12px"
         color="primary"
-        icon="key-regular"
+        :icon="item.type === HouseStatus.Process ? 'hammer-regular' : 'key-regular'"
         padding="8px"
         width="32px"
         height="32px"
@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
   import type { HomeHouseOne } from '~/repositories/houses';
+  import { HouseStatus } from '@/consts/houses';
 
   defineProps<{
     item: HomeHouseOne,
