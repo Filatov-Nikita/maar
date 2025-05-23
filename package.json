@@ -20,6 +20,7 @@
     "vue-router": "^4.5.0",
     "vue-screen": "^2.4.2",
     "vue-slide-up-down": "^3.0.0",
+    "vue-yandex-maps": "^2.1.9",
     "yup": "^1.6.1"
   },
   "devDependencies": {
