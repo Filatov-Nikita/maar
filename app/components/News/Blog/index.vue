@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
   const api = useNuxtApp().$api;
-  const res = useAsyncData(api.news.mainList);
+  const res = await useAsyncData(api.news.mainList);
   const data = useDataOrFail(res);
   const count = computed(() => data.value[0].props[0].totalcount);
   const items = computed(() => data.value[0].data);
