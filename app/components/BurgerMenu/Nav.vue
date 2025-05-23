@@ -22,7 +22,7 @@
         <NuxtLink class="link-secondary" to="#">
           О компании
         </NuxtLink>
-        <NuxtLink class="link-secondary" to="#">
+        <NuxtLink class="link-secondary" :to="{ name: 'realesed-houses' }">
           Реализованные объекты
         </NuxtLink>
         <NuxtLink class="link-secondary" to="#">

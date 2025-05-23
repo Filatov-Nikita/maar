@@ -5,10 +5,10 @@
         <ul class="list">
           <li
             class="list-item"
-            v-for="house in inProcessHouses"
+            v-for="house in houses"
             :key="house.id"
           >
-            <NuxtLink to="#">
+            <NuxtLink :to="{ name: 'houses-slug', params: { slug: house.code } }">
               {{ house.name }}
             </NuxtLink>
           </li>
@@ -18,10 +18,10 @@
         <ul class="list">
           <li
             class="list-item"
-            v-for="house in readyHouses"
-            :key="house.id"
+            v-for="house in realeasedHouses"
+            :key="house.code"
           >
-            <NuxtLink to="#">
+            <NuxtLink :to="{ name: 'realesed-houses-slug', params: { slug: house.code } }">
               {{ house.name }}
             </NuxtLink>
           </li>
@@ -62,11 +62,11 @@
 </template>
 
 <script setup lang="ts">
-  import type { HomeHouseOne } from '~/repositories/houses';
+  import type { HomeHouseOne, HouseRealesedOne } from '@/repositories/houses';
 
   defineProps<{
-    readyHouses: HomeHouseOne[],
-    inProcessHouses: HomeHouseOne[],
+    houses: HomeHouseOne[],
+    realeasedHouses: HouseRealesedOne[],
   }>();
 </script>
 

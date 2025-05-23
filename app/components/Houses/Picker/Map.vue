@@ -16,7 +16,7 @@
         :key="item.id"
         :settings="{ coordinates: parseCoords(item.coordinates) }"
       >
-        <NuxtLink :to="{ name: 'news' }" custom v-slot="{ href, navigate }">
+        <NuxtLink :to="{ name: 'houses-slug', params: { slug: item.code } }" custom v-slot="{ href, navigate }">
           <BaseButtonIcon
             class="block"
             tag="a"

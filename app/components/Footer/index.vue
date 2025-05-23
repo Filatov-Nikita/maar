@@ -2,8 +2,8 @@
   <footer class="footer">
     <div class="wrapper">
       <FooterNavMobile
-        :readyHouses="readyHouses"
-        :inProcessHouses="inProcessHouses"
+        :houses="houses.data.value ?? []"
+        :realeasedHouses="realesedHouses.data.value ?? []"
       />
       <div class="info">
         <div class="logo-row">
@@ -73,11 +73,10 @@
 
   const api = useNuxtApp().$api;
 
-  const res = await useAsyncData(() => api.houses.home());
-  const data = useDataOrFail(res);
-
-  const readyHouses = computed(() => data.value.filter(house => house.type === 'Готовый'));
-  const inProcessHouses = computed(() => data.value.filter(house => house.type === 'Строящийся'));
+  const [ houses, realesedHouses ] = await Promise.all([
+    useAsyncData(() => api.houses.home()),
+    useAsyncData(() => api.houses.allRealesed()),
+  ]);
 </script>
 
 <style scoped lang="scss">

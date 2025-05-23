@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink class="item" to="/">
+  <NuxtLink class="item" :to="{ name: 'houses-slug', params: { slug: item.code } }">
     <div class="photo-wrap">
       <BaseButtonIcon
         class="badge"
