@@ -1,7 +1,7 @@
 <template>
   <div>
     <PageCover
-      title="Реализованные объекты "
+      title="Реализованные объекты"
       :breadcrumbs="[
         { name: 'Главная', to: { name: 'index' } },
         { name: 'Реализованные объекты ' }
@@ -9,7 +9,7 @@
     />
     <main class="page-py">
       <div class="wrapper">
-        <pre>{{ data }}</pre>
+        <HousesRealesedList :items="data" />
       </div>
     </main>
   </div>
